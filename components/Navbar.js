@@ -8,8 +8,10 @@ const Navbar = () => {
   const [menuToggle, setMenuToggle] = useState(false);
   const router = useRouter()
 
-  console.log(router.pathname == '/')
-  
+  const checkActiveNav = (path) => {
+    return router.pathname == path ?'border-b-2 nav-style' : 'nav-style'
+  }
+
   return (
     <div>
       <nav className="bg-blue-700 shadow-xl h-14  text-white flex items-center justify-around font-mono">
@@ -25,20 +27,20 @@ const Navbar = () => {
           </button>
         </div>
         <div className=" hidden md:flex  md:w-2/12 md:justify-center md:gap-8 navsection">
-          <Link href="/" className={router.pathname == '/' ? 'text-red-800' : ''}>
-            <a className={router.pathname == '/' ? 'border-b-2 nav-style' : 'nav-style'} >
+          <Link href="/">
+            <a className={checkActiveNav('/')} >
               Home
             </a>
           </Link>
 
           <Link href="/about">
-            <a className={router.pathname == '/about' ? 'border-b-2 nav-style' : 'nav-style'}>
+            <a className={checkActiveNav('/about')}>
               About
             </a>
           </Link>
 
           <Link href="/rayflash">
-            <a className={router.pathname == '/rayflash' ? 'border-b-2 nav-style' : 'nav-style'}>
+            <a className={checkActiveNav('/rayflash')}>
               List
             </a>
           </Link>
