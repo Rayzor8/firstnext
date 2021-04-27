@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.nav-style {
+  @apply md:text-lg tracking-wider font-bold hover:text-yellow-400 transition duration-300;
+}
 
-.nav-style{
-    @apply md:text-lg tracking-wider font-bold hover:text-yellow-400 transition duration-300
+.button-style {
+  @apply shadow-xl inline-block py-3 px-6 text-lg font-bold rounded my-16 transition duration-300 bg-blue-700 tracking-wide hover:bg-blue-600;
 }
