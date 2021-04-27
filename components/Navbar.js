@@ -32,7 +32,7 @@ const Navbar = () => {
               Home
             </a>
           </Link>
-
+ 
           <Link href="/about">
             <a className={checkActiveNav('/about')}>
               About
