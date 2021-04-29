@@ -5,9 +5,15 @@ import Hero from '../components/Hero';
 
 export default function Home() {
   return (
-    <div>
-      <Hero/>
-    </div>
+    <>
+      <Head>
+        <title>RayFlash | Homepage</title>
+        <link rel="shortcut icon" href="/rayfavico.ico" />
+        <meta name="keywords" content="rayflash"/>
+      </Head>
+      <div>
+        <Hero />
+      </div>
+    </>
   );
 }
-

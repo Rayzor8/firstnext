@@ -2,21 +2,23 @@ import React, { useState } from 'react';
 import { MenuAlt1Icon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import Mobilenav from './Mobilenav';
-import {useRouter} from "next/router";
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
   const [menuToggle, setMenuToggle] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   const checkActiveNav = (path) => {
-    return router.pathname == path ?'border-b-2 nav-style' : 'nav-style'
-  }
+    return router.pathname == path
+      ? 'border-b-2 border-blue-400 nav-style'
+      : 'nav-style';
+  };
 
   return (
     <div>
       <nav className="bg-blue-700 shadow-xl h-14  text-white flex items-center justify-around font-mono">
         <div className="logo flex items-center justify-between w-full md:w-min px-4">
-          <h1 className="text-3xl font-bold tracking-wider text-yellow-400">
+          <h1 className="text-3xl font-bold tracking-wider  bg-clip-text text-transparent bg-gradient-to-l from-yellow-500 to-green-300 animate-pulse">
             RayFlash.
           </h1>
           <button
@@ -28,21 +30,15 @@ const Navbar = () => {
         </div>
         <div className=" hidden md:flex  md:w-2/12 md:justify-center md:gap-8 navsection">
           <Link href="/">
-            <a className={checkActiveNav('/')} >
-              Home
-            </a>
+            <a className={checkActiveNav('/')}>Home</a>
           </Link>
- 
+
           <Link href="/about">
-            <a className={checkActiveNav('/about')}>
-              About
-            </a>
+            <a className={checkActiveNav('/about')}>About</a>
           </Link>
 
           <Link href="/rayflash">
-            <a className={checkActiveNav('/rayflash')}>
-              List
-            </a>
+            <a className={checkActiveNav('/rayflash')}>Gallery</a>
           </Link>
         </div>
       </nav>

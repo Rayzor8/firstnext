@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .nav-style {
-  @apply md:text-lg tracking-wider font-bold hover:text-yellow-400 transition duration-300;
+  @apply md:text-lg tracking-wider font-bold text-yellow-400 hover:text-white transition duration-300 ;
 }
 
 .button-style {

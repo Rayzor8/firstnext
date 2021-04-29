@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Mobilenav = () => {
   return (
-    <div className="flex py-2 px-8 flex-col text-center md:hidden bg-blue-700 shadow-lg h-36  text-white font-mono justify-center">
+    <div className="flex py-2 px-8 flex-col text-center md:hidden bg-blue-700 shadow-lg h-36  text-yellow-400 font-mono justify-center">
       <Link href="/">
         <a className="md:text-lg tracking-widest  hover:text-blue-700 rounded py-1 px-4 text-lg font-bold hover:bg-yellow-400 transition duration-300">
           Home
@@ -18,7 +18,7 @@ const Mobilenav = () => {
 
       <Link href="/rayflash">
         <a className="md:text-lg tracking-widerst hover:text-blue-700 rounded  py-1 px-4 text-lg font-bold hover:bg-yellow-400 transition duration-300">
-          List
+          Gallery
         </a>
       </Link>
     </div>

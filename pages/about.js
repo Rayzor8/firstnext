@@ -1,31 +1,44 @@
-import React from 'react'
+import React from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Profile from '../components/Profile';
+
+const dataProfile = [
+  { id: 1, name: 'CSS', url: '/css.png' },
+  { id: 2, name: 'Javascript', url: '/javascript.png' },
+  { id: 3, name: 'Bootstrap', url: '/bstrap.jpg' },
+  { id: 4, name: 'TailwindCSS', url: '/tailwind.png' },
+  { id: 5, name: 'React JS', url: '/react.png' },
+  { id: 6, name: 'Next JS', url: '/next.jpg' },
+];
 
 const about = () => {
-    return (
-        <section className=" text-yellow-400 px-8  md:px-20 flex flex-col justify-between items-center py-10">
-        <h1 className=" text-xl border-b-4 border-blue-700 font-medium text-center italic mb-4 tracking-wide">About me</h1>
-  
-        <div className="grid gap-4 my-8">
-          <h3 className="text-4xl font-semibold font-mono">
-            RayFlash. | Learner.
-          </h3>
-          <p className="">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro
-            placeat repellat dolores provident adipisci culpa numquam, dignissimos
-            laborum iure accusantium sed a repudiandae nulla delectus dolorem
-            aliquid possimus at modi?
-          </p>
-          <p className="">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            incidunt molestiae nemo tempore voluptatibus et deleniti possimus
-            repellendus quidem labore illo error facilis vitae, perspiciatis
-            consectetur sed. Vitae, corrupti perspiciatis?
-          </p>
+  return (
+    <>
+      <Head>
+        <title>RayFlash | About me</title>
+        <link rel="shortcut icon" href="/rayfavico.ico" />
+        <meta name="keywords" content="rayflash" />
+      </Head>
+      <section className=" text-yellow-400 px-8  md:px-20 flex flex-col justify-between items-center py-10 min-h-screen">
+        <Profile />
+
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-6 md:gap-6">
+          {dataProfile.map((list) => (
+            <div key={list.id}>
+              <Image
+                src={`${list.url}`} //  /banner1.png"
+                width={150}
+                height={150}
+                alt="skills"
+                className="w-full rounded shadow-2xl bg-cover"
+              />
+            </div>
+          ))}
         </div>
       </section>
-    )
-}
+    </>
+  );
+};
 
-export default about
-
-
+export default about;
